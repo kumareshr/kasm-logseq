@@ -37,7 +37,7 @@ RUN curl -O https://download.clojure.org/install/linux-install-1.11.1.1273.sh &&
 
 
 # --------- Runtime Layer ---------
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:debian-bookworm
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:debianbookworm
 
 # Install additional runtime packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
