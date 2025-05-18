@@ -1,0 +1,27 @@
+#!/bin/bash
+
+BIN=/usr/lib/chromium/chromium
+
+# Cleanup
+if ! pgrep chromium > /dev/null;then
+  rm -f $HOME/.config/chromium/Singleton*
+fi
+
+# Run normally on privved containers or modified un non priv
+if grep -q 'Seccomp:.0' /proc/1/status; then
+  ${BIN} \
+  --no-first-run \
+  --password-store=basic \
+  --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT' \
+  --user-data-dir \
+   "$@" > /dev/null 2>&1
+else
+  ${BIN} \
+  --no-first-run \
+  --no-sandbox \
+  --password-store=basic \
+  --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT' \
+  --test-type \
+  --user-data-dir \
+   "$@" > /dev/null 2>&1
+fi
