@@ -6,8 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     LOGSEQ_BRANCH=test/db \
     TITLE=logseq
 
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="quietsy"
+LABEL maintainer="linuxserver.io"
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
