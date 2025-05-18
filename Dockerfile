@@ -20,7 +20,12 @@ RUN apt-get update && apt-get install -y \
     libxcomposite1 libxdamage1 libxrandr2 libxtst6 libxkbfile1 xdg-utils \
     fuse \
     python3 g++ make pkg-config unzip \
+    zip \
     default-jre
+
+# Install Node.js 22.x and npm
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
+    apt-get install -y nodejs
 
 # Install yarn
 RUN npm install -g yarn
