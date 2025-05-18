@@ -1,5 +1,5 @@
 # --------- Build Logseq from Source ---------
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:node-core AS builder
+FROM ubuntu:22.04 AS builder
 
 # Set environment
 ENV DEBIAN_FRONTEND=noninteractive \
