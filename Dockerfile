@@ -67,7 +67,7 @@ RUN echo "**** add icon ****" && \
     chmod +x logseq.app && \
     ./logseq.app --appimage-extract && \
     mv squashfs-root /opt/logseq && \
-    cp /opt/logseq/usr/share/icons/hicolor/512x512/apps/logseq.png /usr/share/icons/hicolor/512x512/apps/logseq.png && \
+    cp /opt/logseq/usr/share/icons/hicolor/256x256/apps/Logseq.png /usr/share/icons/hicolor/256x256/apps/Logseq.png && \
     echo "**** cleanup ****" && \
     apt-get autoclean && \
     rm -rf \
