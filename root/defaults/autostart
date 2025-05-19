@@ -1,13 +1,3 @@
-#if [ "$(whoami)" != "abc" ]; then
-#  echo " ${whoami} is not abc, changing ownership of /opt/logseq to $(id -u):$(id -g)"
-#  sudo lsiown -R $(id -u):$(id -g) /opt/logseq
-#  sleep 15
-#  echo "current ownership:" && ls -ld /opt/logseq
-#fi
-##Add logic here"
-#
-#
-#!/bin/bash
 # Get current user
 current_user="$(whoami)"
 

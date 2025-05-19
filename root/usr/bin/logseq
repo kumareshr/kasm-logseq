@@ -1,5 +1,4 @@
 #!/bin/bash
-export DISPLAY=:1
 BIN=/opt/logseq/Logseq
 
 # Run normally on privved containers or modified un non priv
@@ -7,10 +6,6 @@ if grep -q 'Seccomp:.0' /proc/1/status; then
   ${BIN} \
    "$@" > /dev/null 2>&1
 else
-  while ! xdpyinfo -display $DISPLAY >/dev/null 2>&1; do
-  echo "Waiting for X to be ready..."
-  sleep 0.5
-  done
   ${BIN} \
   --no-sandbox \
   "$@" > /dev/null 2>&1
