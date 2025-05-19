@@ -1,4 +1,6 @@
 if [ "$(whoami)" != "abc" ]; then
+  echo " ${whoami} is not abc, changing ownership of /opt/logseq to $(id -u):$(id -g)"
   sudo lsiown -R $(id -u):$(id -g) /opt/logseq
+  echo "current ownership:" && ls -ld /opt/logseq
 fi
 logseq
