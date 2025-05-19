@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export DISPLAY=:1
 BIN=/opt/logseq/Logseq
 
 # Run normally on privved containers or modified un non priv
