@@ -1,9 +1,34 @@
-if [ "$(whoami)" != "abc" ]; then
-  echo " ${whoami} is not abc, changing ownership of /opt/logseq to $(id -u):$(id -g)"
-  sudo lsiown -R $(id -u):$(id -g) /opt/logseq
-  echo "current ownership:" && ls -ld /opt/logseq
+#if [ "$(whoami)" != "abc" ]; then
+#  echo " ${whoami} is not abc, changing ownership of /opt/logseq to $(id -u):$(id -g)"
+#  sudo lsiown -R $(id -u):$(id -g) /opt/logseq
+#  sleep 15
+#  echo "current ownership:" && ls -ld /opt/logseq
+#fi
+##Add logic here"
+#
+#
+#!/bin/bash
+# Get current user
+current_user="$(whoami)"
+
+# Check if current user is not 'abc'
+if [ "$current_user" != "abc" ]; then
+  echo "$current_user is not abc, changing ownership of /opt/logseq to $(id -u):$(id -g)"
+  sudo chown -R $(id -u):$(id -g) /opt/logseq
+  sleep 5
+  echo "Current ownership:" && ls -ld /opt/logseq
 fi
-#echo "Starting Logseq..."
-sleep 5
-#logseq
-echo "Logseq ready to go!"
+
+# Start Logseq once (broken attempt)
+echo "Starting initial Logseq process..."
+logseq &
+sleep 2
+
+# Kill the broken instance
+echo "Killing previous Logseq process..."
+pkill -f "/opt/logseq/Logseq"
+sleep 2
+
+# Start Logseq again
+echo "Restarting Logseq..."
+logseq &
