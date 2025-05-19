@@ -1,5 +1,6 @@
 #!/bin/bash
-BIN=/opt/logseq/Logseq
+
+BIN=/opt/logseq/logseq
 
 # Run normally on privved containers or modified un non priv
 if grep -q 'Seccomp:.0' /proc/1/status; then
@@ -8,5 +9,5 @@ if grep -q 'Seccomp:.0' /proc/1/status; then
 else
   ${BIN} \
   --no-sandbox \
-  "$@" > /dev/null 2>&1
+   "$@" > /dev/null 2>&1
 fi
