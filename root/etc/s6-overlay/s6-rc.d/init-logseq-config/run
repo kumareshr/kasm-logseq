@@ -2,7 +2,7 @@
 # shellcheck shell=bash
 
 # permissions
-lsiown -R abc:abc \
+lsiown -R kasm-user:kasm-user \
     /config
-lsiown -R abc:abc \
+lsiown -R kasm-user:kasm-user \
     /opt/logseq
