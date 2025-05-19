@@ -1,5 +1,4 @@
-echo "Setting user permissions for logseq"
-# permissions
-sudo chown -R $(id -u):$(id -u) /opt/logseq
-echo "Launching logseq"
+if [ "$(whoami)" != "abc" ]; then
+  sudo lsiown -R $(id -u):$(id -g) /opt/logseq
+fi
 logseq
