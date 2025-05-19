@@ -76,8 +76,9 @@ RUN echo "**** add icon ****" && \
       /config/.cache \
       /config/.launchpadlib \
       /var/lib/apt/lists/* \
-      /var/tmp/* \
-      /tmp/*
+      /var/tmp/* 
+      #\
+      #/tmp/*
 
 # Add local files (e.g., optional startup scripts or desktop entries)
 COPY /root /
