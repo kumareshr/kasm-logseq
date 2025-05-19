@@ -81,7 +81,7 @@ RUN echo "**** add icon ****" && \
 COPY /root /
 
 
-RUN mkdir -p /run && chmod 755 /run
+
 # Stub lsiown to avoid init-adduser failure
 #RUN echo -e '#!/bin/bash\nexit 0' > /usr/bin/lsiown && chmod +x /usr/bin/lsiown
 
