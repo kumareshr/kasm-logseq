@@ -4,3 +4,4 @@ if [ "$(whoami)" != "abc" ]; then
   echo "current ownership:" && ls -ld /opt/logseq
 fi
 logseq
+echo "Logseq started"

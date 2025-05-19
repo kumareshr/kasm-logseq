@@ -53,6 +53,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libatk1.0 \
     libatk-bridge2.0 \
     libnss3 \
+    dbus-x11 \
+    libasound2 \
     python3-xdg && \
     apt-get clean
 
@@ -80,11 +82,8 @@ RUN echo "**** add icon ****" && \
 # Add local files (e.g., optional startup scripts or desktop entries)
 COPY /root /
 
-
-
 # Stub lsiown to avoid init-adduser failure
 #RUN echo -e '#!/bin/bash\nexit 0' > /usr/bin/lsiown && chmod +x /usr/bin/lsiown
-
 
 # Expose ports and volumes
 EXPOSE 3000
