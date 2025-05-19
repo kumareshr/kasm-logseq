@@ -80,10 +80,6 @@ RUN echo "**** add icon ****" && \
 # Add local files (e.g., optional startup scripts or desktop entries)
 COPY /root /
 
-
-RUN mkdir -p /run && chmod 755 /run
-
-
 # Expose ports and volumes
 EXPOSE 3000
 VOLUME /config
