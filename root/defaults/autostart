@@ -3,6 +3,7 @@ if [ "$(whoami)" != "abc" ]; then
   sudo lsiown -R $(id -u):$(id -g) /opt/logseq
   echo "current ownership:" && ls -ld /opt/logseq
 fi
+sleep 30
 echo "Starting Logseq..."
 sleep 5
 logseq
