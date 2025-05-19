@@ -80,8 +80,8 @@ RUN echo "**** add icon ****" && \
 # Add local files (e.g., optional startup scripts or desktop entries)
 COPY /root /
 
-# Stub lsiown to avoid init-adduser failure
-RUN echo -e '#!/bin/bash\nexit 0' > /usr/bin/lsiown && chmod +x /usr/bin/lsiown
+
+RUN mkdir -p /run && chmod 755 /run
 
 
 # Expose ports and volumes
