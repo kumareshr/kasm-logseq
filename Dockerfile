@@ -88,4 +88,5 @@ COPY /root /
 
 # Expose ports and volumes
 EXPOSE 3000
-VOLUME /home/kasm-user/logseq
+VOLUME /home/kasm-user/
+
